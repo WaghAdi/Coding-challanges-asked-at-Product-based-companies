@@ -22,21 +22,22 @@ void main()
     int array[100];//array for string original value
     int newArray[100]; //array for storing output value
     int n,product;
-    printf("Enter how many element want to add in an array\n");
+    printf("Enter how many element want to add in an array: ");
     scanf("%d",&n);
 
     //taking user input value in given array
-    printf("Enter array Element \n");
+    printf("Enter array Elements... \n");
     for(int i=0;i<n;i++)
     {
        scanf("%d",&array[i]);
     }
     //printing given array i.e original array
-    printf("Original Array is \n");
+    printf("Original Array is: [ ");
     for (int i = 0; i < n; i++)
     {
-        printf("%d \t",array[i]);
+        printf("%d ",array[i]);
     }
+    printf("]\n");
 
     //Logic for accepted output
 
@@ -44,26 +45,20 @@ void main()
     {   product=1;
         for(int j=0;j<n;j++)
         {
-           if (i==j)
+           if (i!=j)
            {
-               continue;
+               product=product*array[j];
            }
-           else
-           {
-                product=product*array[j];
-           }
-           
         }
         newArray[i]=product;
     }
 
     //printing new array
-    printf("\n");
-    printf("New Array is \n");
+    printf("New Array is: [ ");
     for (int i = 0; i < n; i++)
     {
-        printf("%d \t",newArray[i]);
+        printf("%d ",newArray[i]);
     }
-    
+    printf("]");
     
 }
